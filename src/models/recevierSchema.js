@@ -12,7 +12,7 @@ export const Recevier = mongoose.model(
             type: String,
             address: {
                 doorNum: Number,
-                Street: String,
+                street: String,
                 district: String,
                 state: String,
                 country: String

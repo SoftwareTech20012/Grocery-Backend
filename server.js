@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import { initApiRoutes } from "./src/api/apiHelper";
+import { initApiRoutes } from "./src/api/apiHelper.js";
 import dotenv from "dotenv";
 dotenv.config();
 
