@@ -14,7 +14,8 @@ export const Recevier = mongoose.model(
                 doorNum: Number,
                 street: String,
                 district: String,
-                state: String,
+                pincode: Number,
+                state: String, 
                 country: String
             },
             nearByLandmark: String
