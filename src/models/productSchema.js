@@ -34,6 +34,29 @@ export const products = mongoose.model(
                 dateOfReview: Date
             }],
             overAllRating: Number
+        },
+        {
+            timestamps: true
         }
     )
+);
+
+export const addToCard = mongoose.model(
+    'addToCard',
+    new Schema(
+        {
+            userId: String,
+            items: [
+                {
+                    productId: String,
+                    quantity: Number
+                }
+            ],
+            totalPrice: Number
+        },
+        {
+            timestamps: true
+        }
+    ),
+    "addToCard"
 );

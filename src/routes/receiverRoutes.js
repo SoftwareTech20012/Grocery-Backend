@@ -8,7 +8,6 @@ router.post("/api/userLogin", async (req, res) => {
     try {
         const { userName, userNumber, doorNum, address, nearByLandmark } = req.body;
         const { street, district, state, country } = address;
-        console.log(address)
         const recevierStructure = {
             userId: uuidv4(),
             userName: userName,
