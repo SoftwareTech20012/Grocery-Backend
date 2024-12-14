@@ -1,5 +1,5 @@
 import express from 'express';
-import { addToCard } from '../models/productSchema.js';
+import { addToCard, products } from '../models/productSchema.js';
 
 const router = express.Router();
 
@@ -24,7 +24,7 @@ router.post('/product/addToCard', async (req, res) => {
                 const findProductPrice =await products.findOne({ productId: value.productId });
                 return value.quantity * findProductPrice.finalPrice 
             }));
-            const addExtraPrice = await finalPrice ? findtotalPrice.push(finalPrice.finalPrice) : findtotalPrice;
+            const addExtraPrice = finalPrice ? findtotalPrice.push(finalPrice.finalPrice) : findtotalPrice;
             const totalPrice = findtotalPrice.reduce((acc, total) => acc + total, 0);
             checkUserId.totalPrice = totalPrice;
             await checkUserId.save()

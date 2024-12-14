@@ -3,6 +3,7 @@ import recevierRoutes from '../routes/receiverRoutes.js';
 import productRoutes from '../routes/productRoutes.js';
 import addToCardProductsRoutes from '../routes/addToCardProducts.js';
 import watchListRoutes from "../routes/watchListRoutes.js";
+import otpVerification from "../routes/otpVerification.js";
 
 var db = mongoose.connect("mongodb://localhost/SoftwareTech-Grocery");
 
@@ -15,4 +16,6 @@ export const initApiRoutes = (expressApp) => {
     expressApp.use(addToCardProductsRoutes);
     //Watchlist API's
     expressApp.use(watchListRoutes);
+    //OTP verification API's
+    expressApp.use(otpVerification)
 }
